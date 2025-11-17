@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        /* 与登录页样式统一，保持视觉一致性 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", sans-serif; }
+        body { background-color: #f5f5f5; }
+        .register-container { 
+            width: 450px; 
+            margin: 80px auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        .title { text-align: center; margin-bottom: 25px; color: #333; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            color: #666; 
+            font-weight: 500; 
+        }
+        .form-group input { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+        .register-btn { 
+            width: 100%; 
+            padding: 12px; 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: background 0.3s; 
+        }
+        .register-btn:hover { background-color: #218838; }
+        .login-link { 
+            text-align: center; 
+            margin-top: 15px; 
+            font-size: 14px; 
+        }
+        .login-link a { color: #409EFF; text-decoration: none; }
+        .login-link a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2 class="title">校园二手商品交易系统</h2>
+        <h3 class="title">用户注册</h3>
+        <!-- 注册表单：提交到/register/action接口，跳转主页面 -->
+        <form action="/register/action" method="post">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" placeholder="请设置用户名（2-20位）" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" placeholder="请设置密码（6-16位）" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">联系电话</label>
+                <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+            </div>
+            <div class="form-group">
+                <label for="campus_auth">校园认证信息</label>
+                <input type="text" id="campus_auth" name="campus_auth" placeholder="请输入学号/校园卡号" required>
+            </div>
+            <button type="submit" class="register-btn">注册并登录</button>
+        </form>
+        <div class="login-link">
+            已有账号？<a href="/login">返回登录</a>
+        </div>
+    </div>
+</body>
+</html>

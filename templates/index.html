@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        /* 主页面样式：顶部导航+商品展示区 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", sans-serif; }
+        body { background-color: #f8f9fa; color: #333; }
+        
+        /* 顶部导航栏 */
+        .navbar { 
+            background-color: #343a40; 
+            color: white; 
+            padding: 15px 50px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .navbar-title { font-size: 22px; font-weight: bold; }
+        .navbar-user { font-size: 16px; }
+        
+        /* 内容区 */
+        .content { width: 1200px; margin: 30px auto; }
+        .page-header { margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .page-header h3 { color: #495057; }
+        
+        /* 商品分类导航 */
+        .category-nav { 
+            background-color: white; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.05); 
+        }
+        .category-nav span { margin-right: 20px; cursor: pointer; color: #666; }
+        .category-nav span.active { color: #409EFF; font-weight: bold; }
+        
+        /* 商品展示区 */
+        .product-list { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+        }
+        .product-card { 
+            background-color: white; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.05); 
+            transition: transform 0.3s; 
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-bottom: 1px solid #eee; 
+        }
+        .product-info { 
+            padding: 15px; 
+        }
+        .product-name { 
+            font-size: 16px; 
+            margin-bottom: 8px; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
+        .product-price { 
+            color: #dc3545; 
+            font-size: 18px; 
+            font-weight: bold; 
+            margin-bottom: 5px; 
+        }
+        .product-time { 
+            font-size: 12px; 
+            color: #999; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-title">校园二手商品交易系统</div>
+        <div class="navbar-user">欢迎使用系统！</div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="content">
+        <div class="page-header">
+            <h3>二手商品浏览</h3>
+        </div>
+
+        <!-- 商品分类导航 -->
+        <div class="category-nav">
+            <span class="active">全部商品</span>
+            <span>书籍教材</span>
+            <span>电子设备</span>
+            <span>生活用品</span>
+            <span>运动器材</span>
+            <span>其他</span>
+        </div>
+
+        <!-- 商品展示列表（模拟数据） -->
+        <div class="product-list">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Python编程书籍" class="product-img" alt="Python编程书籍">
+                <div class="product-info">
+                    <div class="product-name">Python编程：从入门到实践（第二版）</div>
+                    <div class="product-price">¥35.00</div>
+                    <div class="product-time">发布时间：2024-05-10</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=笔记本电脑" class="product-img" alt="笔记本电脑">
+                <div class="product-info">
+                    <div class="product-name">联想小新Pro14 2023款（i5/16G/512G）</div>
+                    <div class="product-price">¥4200.00</div>
+                    <div class="product-time">发布时间：2024-05-08</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=篮球" class="product-img" alt="篮球">
+                <div class="product-info">
+                    <div class="product-name">斯伯丁篮球（几乎全新，仅用2次）</div>
+                    <div class="product-price">¥80.00</div>
+                    <div class="product-time">发布时间：2024-05-09</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=加湿器" class="product-img" alt="加湿器">
+                <div class="product-info">
+                    <div class="product-name">小米加湿器（容量4L，静音款）</div>
+                    <div class="product-price">¥50.00</div>
+                    <div class="product-time">发布时间：2024-05-07</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
